@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}Товары и услуги{% endblock %}
+
+{% block content%}
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Товары:</h1>
+			<p><a href="create/" class="btn btn-primary">Добавить</a></p>
+			<p>
+				<form method="get" class="form-inline">
+				    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Поиск..." aria-label="Поиск..." required="">
+				    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+				</form>
+			</p>
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th scope="col">Наименование</th>
+			      <th scope="col">Цена</th>
+			      <th scope="col">Количество на складе</th>
+			      <th scope="col">Действие</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{% for product in page_object.object_list %}
+			    	<tr>
+					      <td>{{product.product_caption}}</td>
+					      <td>{{product.price}}</td>
+					      <td>{{product.quantity_in_stock}}</td>
+					      <td><a href="edit/{{product.id}}">Изменить </a> | <a href="delete/{{product.id}}">Удалить</a></td>
+			   	 	</tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+				<nav aria-label="...">
+						  <ul class="pagination">
+
+							    <li class="page-item {%if not prev_page_url %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ prev_page_url }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+							    </li>
+
+							   
+								{% for n in page_object.paginator.page_range %}
+									{% if page_object.number == n %}
+										<li class="page-item active" aria-current="page">
+									    	<a class="page-link" href="?page={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+									    </li>
+										{% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+									    <li class="page-item">
+									    	<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+									    </li>
+									{% endif %}
+								{% endfor %}
+
+							    <li class="page-item {%if not next_page_url %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ next_page_url }} ">Следущая</a>
+							    </li>
+
+						  </ul>
+					</nav>
+		</div>
+	</div>
+</div>
+<!--
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Услуги</h1>
+			<a href="create/" class="btn btn-primary">Добавить</a>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Наименование</th>
+			      <th scope="col">Цена</th>
+			      <th scope="col">Действие</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{% for person in worker %}
+			    	<tr>
+					      <td>{{person.first_name}}</td>
+					      <td>{{person.middle_name}}</td>
+					      <td><a href="edit/{{person.id}}">Изменить </a> | <a href="delete/{{person.id}}">Удалить</a></td>
+			   	 	</tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+ -->
+{% endblock %}

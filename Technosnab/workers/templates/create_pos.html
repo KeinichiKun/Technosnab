@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма добавление сотрудника{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<form id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col-sm-8'>
+									    						<h1>Форма добавление должности:</h1>
+																	{{form}}
+																	<input type="submit" class="btn btn-primary mt-4" value="Сохранить" >   
+			            					</div>
+						 	</div>
+	</div>
+
+			
+
+{% endblock %}

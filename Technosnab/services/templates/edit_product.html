@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма изменения товара{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<!-- <form method="POST">
+		{% csrf_token %}
+		<div class="container">
+	        <div class="row">
+	        	<div class="col-lg-8">
+			        <h1>Форма изменения товара:</h1>
+				        <div class="container">
+				        	<div class="row">
+				        		<div class="col-sm-8">
+			        				<div class="form-group">
+				        				<p>
+								            <label>Введите наименование:</label><br>
+								            <input type="text" name="product_caption" value="{{product.product_caption}} " class="form-control" placeholder="Введите наименование" maxlength="20"/>
+								        </p>
+								        <p>
+								            <label>Введите цену:</label><br>
+								            <input type="number" name="price" value="{{product.price}}" class="form-control" placeholder="Введите цену" />
+								        </p>
+								        <p>
+								            <label>Введите количество на складе:</label><br>
+								            <input type="number" name="quantity_in_stock" value="{{product.quantity_in_stock}}" class="form-control" placeholder="Введите количество"/>
+								        </p>
+							        		<input type="submit" value="Сохранить" class="btn btn-primary">
+			        				</div>
+			        			</div>
+			        		</div>
+						</div>
+				</div>
+			</div>	
+		</div>		           
+</form> -->
+
+<form action="{{tom.get_update_url}}" id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col-sm-8'>
+									    						<h1>Форма изменения товара:</h1>
+									    							{% for field in form %}
+									    								<div class="form-group">
+
+									    									{% if field.errors %}
+									    										<div class="alert alert-danger" role="alert">
+									    											{{ field.errors }}
+									    										</div>
+									    									{% endif%}
+									    									
+									    									 {{ field.label }}
+									    									 {{ field }}
+									    								</div>
+									    							{% endfor %}
+																	
+																	<input type="submit" class="btn btn-primary mt-4" value="Сохранить" >   
+			            					</div>
+						 	</div>
+	</div>
+
+			
+
+</form>
+{% endblock %}

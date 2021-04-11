@@ -1,0 +1,335 @@
+{% extends 'base.html' %}
+
+{% block title %}Транспорт: {{car.state_number}}{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+<style>
+    .Up {
+        text-transform: uppercase;
+    }
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col"
+			><h1 name="state_number">Транспорт: {{car.state_number}}</h1>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			
+			
+			<form action="{{tom.get_update_url}}" id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col'>
+									    						
+									    						<input type="submit" class="btn btn-primary mt-4" value="Сохранить" >   
+									    							{% for field in form %}
+									    								<div class="form-group">
+
+									    									{% if field.errors %}
+									    										<div class="alert alert-danger" role="alert">
+									    											{{ field.errors }}
+									    										</div>
+									    									{% endif%}
+									    									
+									    									 {{ field.label }}
+									    									 {{ field }}
+									    								</div>
+									    							{% endfor %}
+																	
+																	
+			            					</div>
+			            					<div class="col">
+												<canvas id="funchart" width="400" height="400"></canvas>
+											</div>
+							</div>
+	</div>
+
+
+			
+
+</form>
+
+		
+
+</div>		
+		<script type="text/javascript">  
+			
+			
+
+		    var timeFormat = 'DD-MM-YYYY HH:mm';
+
+		    var a = document.getElementById('funchart').getContext('2d');
+		    var myLineChart = new Chart(a, {
+		      type: 'line',
+		      data: {
+
+		              labels:[{% for i in page_object_ex.object_list  %}{{ i.id }},{% endfor %}],
+		              datasets: 
+		              [
+		                {
+		                  label:'Заработано',
+		                  data: [{% for i in page_object_pr.object_list %}{{ i.id }},{% endfor %}],
+		                  borderColor: 'rgba(50, 122, 17, 1)',
+		                  backgroundColor:'rgba(50, 122, 17, 0.3)',
+		                  
+		            
+		                }, 
+		                {
+		                  label:'Потрачено',
+		                  data: [{% for i in page_object_ex.object_list %}{{ i.cost }},{% endfor %}],
+		                  borderColor: 'rgba(161, 5, 5, 1)',
+		                  backgroundColor:'rgba(161, 5, 5, 0.3)',
+		                  
+		                }, 
+		              ]
+		      },
+		      options: {
+		        title: {
+		          
+		        },
+		        scales: {
+		          xAxes: [{
+		           // type: 'time',
+		            time: {
+		              parser: timeFormat,
+		             // round: 'day'
+		              tooltipFormat: 'll HH:mm'
+		            },
+		            scaleLabel: {
+		              display: true,
+		             
+		            }
+		          }],
+		          yAxes: [{
+		            scaleLabel: {
+		              display: true,
+		             
+		            }
+		          }]
+		        },
+		      }
+		    });
+
+
+
+  </script>
+
+</div>
+    <div class="container">
+    	<div class="row">
+    		
+
+    		<div class="col-lg">
+    			
+    			<h2>Заработано:</h2>
+    		
+    				<!--
+						<input type="submit" class="btn btn-primary" value="Сохранить" >
+						<input type="submit" class="btn btn-primary" value="Добавить" >
+					-->
+					<div class="container">
+						<div class="row">
+							<div class='col-sm-8'>
+								<div class="form-group">
+									<p></p>
+								<!--	<a href="createpr/" class="btn btn-primary">Добавить</a>-->
+    						    </div>
+							</div>
+						</div>
+					</div>
+				
+		    	<table class="table table-bordered">
+				  <thead>
+				    <tr>
+				      <th scope="col">Наименование</th>
+				      <th scope="col">Сумма</th>
+				      <th scope="col">Дата</th>
+				      
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	{% for profit in page_object_pr.object_list %}
+				    	<tr>
+						      <td>Заказ № {{profit.id}}</td>
+						      <td>{{profit.final_price}} руб.</td>
+						       <td>{{profit.date}}</td>
+						     
+				   	 	</tr>
+				    {% endfor %}
+				  </tbody>
+				</table>
+					
+					<nav aria-label="...">
+						  <ul class="pagination">
+
+							    <li class="page-item {% if not prev_page_url_pr %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ prev_page_url_pr }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+							    </li>
+
+							   
+								{% for n in page_object_pr.paginator.page_range %}
+									{% if page_object_pr.number == n %}
+										<li class="page-item active" aria-current="page">
+									    	<a class="page-link" href="?page_pr={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+									    </li>
+										{% elif n > page_object_pr.number|add:-3 and n < page_object_pr.number|add:3 %}
+									    <li class="page-item">
+									    	<a class="page-link" href="?page_pr={{ n }}">{{ n }}</a>
+									    </li>
+									{% endif %}
+								{% endfor %}
+
+							    <li class="page-item {% if not next_page_url_pr %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ next_page_url_pr }} ">Следущая</a>
+							    </li>
+
+						  </ul>
+					</nav>
+
+    		</div>
+    		
+    		<div class="col-lg">
+				<h2>Потрачено:</h2>
+				
+					<!--
+						<input type="submit" class="btn btn-primary" value="Сохранить" >
+						<input type="submit" class="btn btn-primary" value="Добавить" >
+					-->
+					<div class="container">
+						<div class="row">
+							<div class='col-sm-8'>
+								<div class="form-group">
+									<a href="createex/" class="btn btn-primary">Добавить</a>
+							    </div>
+							</div>
+						</div>
+					</div>
+				
+				
+
+		    	<table class="table table-bordered">
+				  <thead>
+				    <tr>
+				      <th scope="col">Наименование</th>
+				      <th scope="col">Сумма</th>
+				      <th scope="col">Дата</th>
+				      <th scope="col"></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	{% for expenses in page_object_ex.object_list %}
+				    	<tr>
+						      <td>{{expenses.description}}</td>
+						      <td>{{expenses.cost}} руб.</td>
+						      <td>{{expenses.data}}</td>
+						      <td><a href="{% url 'deleteEx' expenses.id %}">Удалить</a></td>
+				   	 	</tr>
+				    {% endfor %}
+				  </tbody>
+				</table>
+
+					<nav aria-label="...">
+						  <ul class="pagination">
+
+							    <li class="page-item {%if not prev_page_url_ex %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ prev_page_url_ex }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+							    </li>
+
+							   
+								{% for n in page_object_ex.paginator.page_range %}
+									{% if page_object_ex.number == n %}
+										<li class="page-item active" aria-current="page">
+									    	<a class="page-link" href="?page_ex={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+									    </li>
+										{% elif n > page_object_ex.number|add:-3 and n < page_object_ex.number|add:3 %}
+									    <li class="page-item">
+									    	<a class="page-link" href="?page_ex={{ n }}">{{ n }}</a>
+									    </li>
+									{% endif %}
+								{% endfor %}
+
+							    <li class="page-item {%if not next_page_url_ex %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ next_page_url_ex }} ">Следущая</a>
+							    </li>
+
+						  </ul>
+					</nav>
+
+    		</div>
+    	</div>
+    </div>
+	<div class="container">
+			<div class="row">
+				<div class="col">
+					<p><a href="{% url 'createRep' car.id %}" class="btn btn-primary">Добавить ремонт</a></p>
+					<table class="table table-bordered">
+					  <thead>
+					    <tr>
+					      <th scope="col">Время начала и окончания работ</th>
+					      <th scope="col">Наименование запчастей</th>
+					      <th scope="col">Вид ремонта</th>
+					      <th scope="col">Исполнитель</th>
+					      <th scope="col"></th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	{% for rep in page_object_rep.object_list %}
+					    	<tr>
+							      <td>{{rep.data_start}} - {{rep.data_end}}</td>
+							      <td>{{rep.description}}</td>
+							      <td>{{rep.type}}</td>
+							      <td>{{rep.worker}}</td>
+							      <td><a href="{% url 'deleteRep' rep.id %}">Удалить</a></td>
+					   	 	</tr>
+					    {% endfor %}
+					  </tbody>
+					</table>
+
+						<nav aria-label="...">
+							  <ul class="pagination">
+
+								    <li class="page-item {%if not prev_url_rep %} disabled {% endif %}">
+								      	<a class="page-link" href="{{ prev_url_rep }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+								    </li>
+
+								   
+									{% for n in page_object_rep.paginator.page_range %}
+										{% if page_object_rep.number == n %}
+											<li class="page-item active" aria-current="page">
+										    	<a class="page-link" href="?page_rep={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+										    </li>
+											{% elif n > page_object_rep.number|add:-3 and n < page_object_rep.number|add:3 %}
+										    <li class="page-item">
+										    	<a class="page-link" href="?page_rep={{ n }}">{{ n }}</a>
+										    </li>
+										{% endif %}
+									{% endfor %}
+
+								    <li class="page-item {%if not next_url_rep %} disabled {% endif %}">
+								      	<a class="page-link" href="{{ next_url_rep }} ">Следущая</a>
+								    </li>
+
+							  </ul>
+						</nav>
+
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!--<script src="{% static 'js/graf.js' %}"></script>-->
+{% endblock %}

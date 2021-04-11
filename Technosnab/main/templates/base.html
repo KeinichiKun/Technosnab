@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	{% load static %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/01a48ae3e3.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="{% static 'css/reset.css'%}">
+	<link rel="stylesheet" href="{% static 'css/BaseStyle.css'%}">
+
+	{% block filesLink %}
+	{% endblock %}
+</head>
+
+<body>
+ 	<header>
+		
+	</header>
+	
+	
+				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				    <ul class="navbar-nav mr-auto">
+				      {% url 'workers' as url_workers %}
+								{% url 'cars' as url_cars %}
+								{% url 'services' as url_services %}
+								{% url 'orders' as url_orders %}
+								{% url 'customers' as url_customers %}
+								{% url 'login' as url_login %}
+								{% url 'logout' as url_logout %}
+								{% url 'register' as url_register %}
+								<li class="nav-item disabled"><a class="nav-link disabled" href="#" >Техноснаб</a></li>
+								<li class="nav-item "><a class="nav-link {% if url_workers == request.path %}active{% endif %}" href="{{url_workers}}">Сотрудники</a></li>
+								<li class="nav-item "><a class="nav-link {% if url_cars == request.path %}active{% endif %} " href="{{url_cars}}">Автопарк</a></li>
+								<li class="nav-item "><a class="nav-link {% if url_services == request.path %}active{% endif %}" href="{{url_services}}">Товары</a></li>
+								<li class="nav-item "><a class="nav-link {% if url_orders == request.path %}active{% endif %}" href="{{url_orders}}">Заказы</a></li>
+								<li class="nav-item "><a class="nav-link {% if url_customers == request.path %}active{% endif %}" href="{{url_customers}}">Заказчики</a></li>
+				    </ul>
+				    <form class="form-inline my-2 my-lg-0">
+						    <ul class="navbar-nav ">
+								{% if user.is_staff %}											
+								<!--<li class="nav-item "><a class="nav-link {% if url_register == request.path %}active{% endif %}" href="{{url_register}}">Создать пользователя</a></li> -->							
+									<li class="nav-item "><a class="nav-link disabled" href="{{url_register}}">{{request.user}}</a></li>
+									<li class="nav-item "><a class="nav-link {% if url_logout == request.path %}active{% endif %}" href="{{url_logout}}">Выход</a></li>
+								{% else %}
+									<li class="nav-item "><a class="nav-link {% if url_login == request.path %}active{% endif %}" href="{{url_login}}">Авторизация</a></li>
+								{% endif %}
+							</ul>
+				    </form>
+				  </div>
+				</nav>
+
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+	
+	{% if request.user.is_authenticated  %}
+	
+	{% block content%}
+
+	{% endblock %}
+
+	{% else %}
+		<h1>Вы не авторизованы</h1>
+	{% endif %}
+			</div>
+		</div>
+	</div>
+	<footer class="footer text-muted justify ">
+		
+			
+				
+					<hr>
+					
+					<!--<p class="text-right">© Техноснаб 2020﻿-2020</p>-->
+				</div>
+			
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+	<script src="{% static 'docsupport/jquery-3.2.1.min.js' %}" type="text/javascript"></script>
+  	<script src="{% static 'js/chosen.jquery.js' %}" type="text/javascript"></script>
+  	<script src="{% static 'docsupport/prism.js' %}" type="text/javascript" charset="utf-8"></script>
+  	<script src="{% static 'docsupport/init.js' %}" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

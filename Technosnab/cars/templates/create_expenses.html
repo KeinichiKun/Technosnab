@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма добавления расхода{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<form method="POST">
+				<div class="container">
+					<div class="row">
+						<div class='col-sm-8'>
+							<div class="form-group">
+        						{% csrf_token %}
+        						<h1>Форма добавления расхода:</h1>
+        				    </div>
+						</div>
+					</div>
+				</div>					
+        		<div class="container">
+					<div class="row">
+						<div class='col-sm-8'>
+							<div class="form-group">		
+				            	<label>Введите расход:</label><br>
+				            	<input type="text" name="description" class="form-control" placeholder="Введите расход" maxlength="400"/>
+						    </div>
+						</div>
+					</div>
+				</div>	            	
+				<div class="container">
+					<div class="row">
+						<div class='col-sm-8'>
+							<div class="form-group">
+				            	<label>Введите стоимость:</label><br>
+				            	<input type="number" name="cost" class="form-control" placeholder="Введите расход"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class='col-sm-8'>
+							<div class="form-group">
+				        		<label>Дата:</label><br>
+								<input type="date" class="form-control" id="date" name="data" required>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class='col-sm-8'>
+							<div class="form-group">
+				    			<input type="submit" href="{% url 'detail_car' car.id %}" class="btn btn-primary" value="Сохранить" >
+							</div>
+						</div>
+					</div>
+				</div>    			
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

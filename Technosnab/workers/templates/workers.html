@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}Сотрудники{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+    
+{% endblock %}
+	
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<h1>Сотрудники:</h1>
+			<p><a href="create/" class="btn btn-primary">Добавить сотрудника</a> <a href="create_pos/" class="btn btn-primary">Добавить должность</a></p>
+			<p></p>
+			<p>
+				<form  method="get" class="form-inline">
+			    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Поиск..." aria-label="Search">
+			    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+			</form>
+			</p>
+			<table class="table table-bordered">
+			  <thead>
+			    <tr>
+			      <th scope="col">ФИО</th>
+			      <th scope="col">Должность</th>
+			      <th scope="col">Телефон</th>
+			      <th scope="col">Паспорт</th>
+			      <th scope="col">Адрес</th>
+			      <!-- <th scope="col">Скан Паспорта</th> -->
+			      <th scope="col"></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{% for person in page_object.object_list %}
+			    	<tr>
+					      <td>
+					      		{% if person.middle_name == None %} - {% else %} {{person.middle_name}} {% endif %}
+					      		{% if person.first_name == None %} - {% else %} {{person.first_name}} {% endif %}
+					      		{% if person.last_name == None %} - {% else %} {{person.last_name}} {% endif %}
+					      </td>
+					      <td>
+					       		{% if person.P_position == None %} - {% else %} {{person.P_position}} {% endif %}</td>
+					      <td>
+					      {% if person.phone == None %} - {% else %} {{person.phone}} {% endif %}
+					      </td>
+					      <td>
+								{% if person.passport_seria == None %} - {% else %} {{person.passport_seria}}{% endif %}
+								{% if person.passport_number == None %} - {% else %} {{person.passport_number}}{% endif %}
+								{% if person.passport_issued == None %} - {% else %} {{person.passport_issued}}{% endif %}
+								{% if person.passport_date == None %} - {% else %} {{person.passport_date}}{% endif %}
+					      </td>
+					      <td>
+								{% if person.adress == None %} - {% else %} {{person.adress}} {% endif %}
+					      </td>
+					     
+						<!--       	
+						  {% if person.passport_img %}
+						     <td><img src="{{person.passport_img.url}}"></td>
+
+						  {% else %}
+						   <td>-</td>
+						  {% endif %} -->
+					      <td><a href="edit/{{person.id}}">Изменить </a> | <a href="delete/{{person.id}}">Удалить</a><!-- |  <a href="tabel/{{person.id}}">Табель</a> --></td>
+			   	 	</tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+				<nav aria-label="...">
+					  <ul class="pagination">
+
+						    <li class="page-item {%if not prev_page_url %} disabled {% endif %}">
+						      	<a class="page-link" href="{{ prev_page_url }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+						    </li>
+
+						   
+							{% for n in page_object.paginator.page_range %}
+								{% if page_object.number == n %}
+									<li class="page-item active" aria-current="page">
+								    	<a class="page-link" href="?page={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+								    </li>
+									{% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+								    <li class="page-item">
+								    	<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+								    </li>
+								{% endif %}
+							{% endfor %}
+
+						    <li class="page-item {%if not next_page_url %} disabled {% endif %}">
+						      	<a class="page-link" href="{{ next_page_url }} ">Следущая</a>
+						    </li>
+
+					  </ul>
+				</nav>
+
+
+		</div>
+	</div>
+</div>
+
+	
+		
+
+		
+{% endblock %}

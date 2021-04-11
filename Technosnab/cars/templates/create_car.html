@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма добавление транспорта{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<style>
+    .Up {
+        	text-transform: uppercase;
+        }
+</style>
+
+<form id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col-sm-8'>
+									    						<h1>Форма добавление транспорта:</h1>
+									    							{% for field in form %}
+									    								<div class="form-group">
+
+									    									{% if field.errors %}
+									    										<div class="alert alert-danger" role="alert">
+									    											{{ field.errors }}
+									    										</div>
+									    									{% endif%}
+									    									
+									    									 {{ field.label }}
+									    									 {{ field }}
+									    								</div>
+									    							{% endfor %}
+																	
+																	<input type="submit" class="btn btn-primary mt-4" value="Сохранить" >   
+			            					</div>
+						 	</div>
+	</div>
+
+			
+
+</form>
+
+
+<!--
+<form method="POST">
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-8'>
+				<div class="form-group">
+					
+	        			{% csrf_token %}
+	        			<h1>Форма добавление транспорта:</h1>
+	        		
+				</div>
+			</div>
+		</div>
+	</div>		
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">         			
+					            <label>Введите гос. номер:</label><br>
+					            <input type="text" name="state_number" class="form-control Up" placeholder="Введите гос. номер" maxlength="6"/>
+				</div>
+			</div>
+		 </div>
+	</div>				       
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  
+					            <label>Введите модель:</label><br>
+					            <input type="text" name="Model_caption" class="form-control" placeholder="Введите модель" maxlength="6"/>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				      
+					            <label>Введите марку:</label><br>
+					            <input type="text" name="Mark_caption" class="form-control" placeholder="Введите марку" maxlength="30"/>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				    
+					            <label>Введите спецификацию:</label><br>
+					            <input type="text" name="Spec_caption" class="form-control" placeholder="Введите спецификацию" maxlength="30"/>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				      
+					            <label>Введите грузоподъемность:</label><br>
+					            <input type="number" name="carrying" class="form-control" placeholder="Введите грузоподъемность/вместимость" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				      
+					            <label>Введите стоимость аренды:</label><br>
+					            <input type="number" name="rent" class="form-control" placeholder="Введите стоимость аренды"/>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">	       
+					        
+	        					<input type="submit" class="btn btn-primary" value="Сохранить">
+				</div>
+			</div>
+		 </div>
+	</div>	          
+</form>
+
+
+-->
+{% endblock %}

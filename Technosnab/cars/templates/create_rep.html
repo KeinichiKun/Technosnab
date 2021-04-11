@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма добавление транспорта{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<style>
+    .Up {
+        	text-transform: uppercase;
+        }
+</style>
+<form method="POST">
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-8'>
+				<div class="form-group">
+					
+	        			{% csrf_token %}
+	        			<h1>Форма добавление ремонта:</h1>
+	        		
+				</div>
+			</div>
+		</div>
+	</div>		
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">         			
+					            <label>Время начала:</label><br>
+					            <input type="date" class="form-control" id="date" name="data_start" required>
+				</div>
+			</div>
+		 </div>
+	</div>				       
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  
+					            <label>Время окончания:</label><br>
+					            <input type="date" class="form-control" id="date" name="data_end" required>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				      
+					            <label>Наименование запчасти:</label><br>
+					            <input type="text" name="description" class="form-control" placeholder="Введите наименование запчасти" maxlength="30"/>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				    
+					            <label>Вид ремонта:</label><br>
+					            <select name="type" class="form-control">
+							            {% for type in type %}
+							            <option name="type" value="{{type.id}}">{{type.description}}</option>
+							            {% endfor %}
+							    </select>
+				</div>
+			</div>
+		 </div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">  				      
+					            <label>Исполнитель:</label><br>
+					            <select name="worker" class="form-control">
+							            {% for worker in worker %}
+							            <option name="type" value="{{worker.id}}">{{worker.first_name}} {{worker.middle_name}} {{worker.last_name}}</option>
+							            {% endfor %}
+							    </select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-6'>
+				<div class="form-group">	       
+					        
+	        					<input type="submit" class="btn btn-primary" value="Сохранить">
+				</div>
+			</div>
+		 </div>
+	</div>	          
+</form>
+
+
+
+{% endblock %}

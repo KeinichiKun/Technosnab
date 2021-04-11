@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Автопарк{% endblock %}
+
+{% block content%}
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Автопарк:</h1>
+			<p><a href="create/" class="btn btn-primary">Добавить</a></p>
+			<p>
+				<form method="get" class="form-inline">
+				    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Поиск..." aria-label="Search" required="">
+				    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+				</form>
+			</p>
+			<table class="table table-bordered ">
+			  <thead>
+			    <tr>
+			      <th scope="col">Гос. номер</th>
+			      <th scope="col">Модель</th>
+			      <th scope="col">Марка</th>
+			      <th scope="col">Спецификация</th>
+			      <th scope="col">Грузоподъемность</th>
+			      <th scope="col"></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{% for cars in page_object.object_list %}
+			    	<tr>
+					      <td>{{cars.state_number}}</td>
+					      <td>{{cars.Model_caption}}</td>
+					      <td>{{cars.Mark_caption}}</td>
+					      <td>{{cars.Spec_caption}}</td>
+					      <td>{{cars.carrying}} т.</td>
+					      <td><a href="delete/{{cars.id}}">Удалить</a> | <a href="detail/{{cars.id}}">Подробнее</a></td>
+			   	 	</tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+				<nav aria-label="...">
+					  <ul class="pagination">
+
+						    <li class="page-item {%if not prev_page_url %} disabled {% endif %}">
+						      	<a class="page-link" href="{{ prev_page_url }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+						    </li>
+
+						   
+							{% for n in page_object.paginator.page_range %}
+								{% if page_object.number == n %}
+									<li class="page-item active" aria-current="page">
+								    	<a class="page-link" href="?page={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+								    </li>
+									{% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+								    <li class="page-item">
+								    	<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+								    </li>
+								{% endif %}
+							{% endfor %}
+
+						    <li class="page-item {%if not next_page_url %} disabled {% endif %}">
+						      	<a class="page-link" href="{{ next_page_url }} ">Следущая</a>
+						    </li>
+
+					  </ul>
+				</nav>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

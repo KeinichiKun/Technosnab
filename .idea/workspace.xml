@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e05238c-78df-4896-bf14-a4fe10b1efe6" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Technosnab/main/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="42" column="52" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>customers</find>
+      <find>cars</find>
+      <find>p</find>
+      <find>cars_list</find>
+      <find>cars.html</find>
+      <find>product_caption</find>
+      <find>cars_list.html</find>
+      <find>search</find>
+      <find>tabel</find>
+      <find>editEx</find>
+      <find>edit</find>
+      <find>include</find>
+      <find>expenses</find>
+      <find>Вы не авторизованы</find>
+      <find>I</find>
+      <find>dj_database_url</find>
+      <find>Position</find>
+      <find>PosFormCreate</find>
+      <find>Order.car</find>
+      <find>car</find>
+      <find>T_customer</find>
+      <find>Manager</find>
+      <find>page_object_pr</find>
+      <find>found_entries</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/TechProject/Technosnab/settings.py" />
+        <option value="B:/Technosnab/Technosnab/urls.py" />
+        <option value="B:/Technosnab/passenger_wsgi.py" />
+        <option value="B:/ФАЙЛЫ/passenger_wsgi.py" />
+        <option value="B:/Technosnab/Technosnab/settings.py" />
+        <option value="B:/ФАЙЛЫ/test/settings.py" />
+        <option value="$PROJECT_DIR$/Technosnab/main/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/Technosnab/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/login/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/login/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/main/templates/base.html" />
+        <option value="B:/ФАЙЛЫ/settings.py" />
+        <option value="B:/ФАЙЛЫ/Technosnab/Technosnab/Technosnab/settings.py" />
+        <option value="B:/ФАЙЛЫ/Technosnab/Technosnab/orders/views.py" />
+        <option value="B:/ФАЙЛЫ/Technosnab/Technosnab/workers/models.py" />
+        <option value="B:/ФАЙЛЫ/Technosnab/Technosnab/customers/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/login/forms.py" />
+        <option value="B:/ФАЙЛЫ/Старый проект с хоста/mlatest.online/Technosnab/workers/views.py" />
+        <option value="B:/ФАЙЛЫ/изменения 09 05 2020/urls.py" />
+        <option value="B:/ФАЙЛЫ/изменения 09 05 2020/Technosnab/orders/views.py" />
+        <option value="B:/ФАЙЛЫ/изменения 09 05 2020/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/services/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/services/forms.py" />
+        <option value="$PROJECT_DIR$/Technosnab/services/models.py" />
+        <option value="B:/ФАЙЛЫ/изменения 17 05 2020/новое/Technosnab/customers/models.py" />
+        <option value="$PROJECT_DIR$/Technosnab/cars/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/services/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/customers/forms.py" />
+        <option value="$PROJECT_DIR$/Technosnab/cars/models.py" />
+        <option value="$PROJECT_DIR$/Technosnab/customers/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/workers/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/workers/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/workers/models.py" />
+        <option value="$PROJECT_DIR$/Technosnab/workers/admin.py" />
+        <option value="$PROJECT_DIR$/Technosnab/Technosnab/urls.py" />
+        <option value="$PROJECT_DIR$/venv/Scripts/django-admin.py" />
+        <option value="$PROJECT_DIR$/Technosnab/orders/urls.py" />
+        <option value="$PROJECT_DIR$/Technosnab/orders/models.py" />
+        <option value="$PROJECT_DIR$/Technosnab/orders/forms.py" />
+        <option value="$PROJECT_DIR$/Technosnab/cars/forms.py" />
+        <option value="$PROJECT_DIR$/Technosnab/workers/forms.py" />
+        <option value="B:/ФАЙЛЫ/изменения 13 06 2020/Technosnab/settings.py" />
+        <option value="$PROJECT_DIR$/Technosnab/Excel_in_txt.py" />
+        <option value="$PROJECT_DIR$/Technosnab/customers/admin.py" />
+        <option value="$PROJECT_DIR$/Technosnab/orders/admin.py" />
+        <option value="$PROJECT_DIR$/Technosnab/cars/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/customers/views.py" />
+        <option value="B:/ФАЙЛЫ/изменения 28 06 2020/Technosnab/orders/models.py" />
+        <option value="$PROJECT_DIR$/Technosnab/orders/views.py" />
+        <option value="$PROJECT_DIR$/Technosnab/customers/models.py" />
+        <option value="$PROJECT_DIR$/Technosnab/Technosnab/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="534" />
+    <option name="y" value="85" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Technosnab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Technosnab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Technosnab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Technosnab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+              <item name="Technosnab" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="deployment&#9;null&#9;null" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python">
+      <module name="Technosnab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="B:\Project\Technosnab\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="path_to/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e05238c-78df-4896-bf14-a4fe10b1efe6" name="Default" comment="" />
+      <created>1583921307448</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583921307448</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10590095" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32743362" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27974948" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1548999" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.30283225" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32743362" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="8" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Technosnab/cars/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/cars/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="12" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/Technosnab/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2227">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/cars/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/main/static/css/BaseStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/cars/templates/cars.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/login/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/cars/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="44" column="12" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/Technosnab/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Technosnab/main/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="42" column="52" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

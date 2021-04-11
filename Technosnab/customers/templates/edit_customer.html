@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма изменения заказчиков{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<form action="{{tom.get_update_url}}" id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col-sm-8'>
+									    						<h1>Форма изменения заказчиков:</h1>
+									    							{% for field in form %}
+									    								<div class="form-group">
+
+									    									{% if field.errors %}
+									    										<div class="alert alert-danger" role="alert">
+									    											{{ field.errors }}
+									    										</div>
+									    									{% endif%}
+									    									
+									    									 {{ field.label }}
+									    									 {{ field }}
+									    								</div>
+									    							{% endfor %}
+																	
+																	<input type="submit" class="btn btn-primary mt-4" value="Сохранить" >   
+			            					</div>
+						 	</div>
+	</div>
+
+			
+
+</form>
+<!-- <div class="container">
+		<div class="row">
+			<div class='col-sm-8'>
+				<div class="form-group">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<form method="POST">
+					        {% csrf_token %}
+					        <h1>Форма изменения заказчиков:</h1>
+					       					<p>
+									            <label>Введите фамилию:</label><br>
+									            <input type="text" name="first_name" class="form-control" placeholder="Введите фамилию" value="{{customer.first_name}}" maxlength="20"/>
+									        </p>
+									        <p>
+									            <label>Введите имя:</label><br>
+									            <input type="text" name="middle_name" class="form-control" placeholder="Введите имя" value="{{customer.middle_name}}" maxlength="20"/>
+									        </p>
+									        <p>
+									            <label>Введите отчество:</label><br>
+									            <input type="text" name="last_name" class="form-control" placeholder="Введите отчество" value="{{customer.last_name}}" maxlength="20"/>
+									        </p>
+									        <p>
+									            <label>Введите организацию:</label><br>
+									            <input type="text" name="organization" class="form-control" placeholder="Введите организацию" value="{{customer.organization}}" maxlength="20"/>
+									        </p>
+									        <p>
+									            <label>Адрес:</label><br>
+									            <input type="text" name="adres" class="form-control" placeholder="Введите адрес" value="{{customer.adres}}" maxlength="200"/>
+									        </p>
+									        <p>
+									            <label>Введите телефон:</label><br>
+									            <input type="text" name="phone" class="form-control" placeholder="Введите телефон" value="{{customer.phone}}" maxlength="11"/>
+									        </p>
+									        <p>
+									            <label>Выберите тип заказчика:</label><br>
+									            <select class="form-control" name="T_customer">
+									            	{% for type in type %}
+													<option value="{{type.id}}">{{type.type_cus_caption}}</option>
+													{% endfor %}
+												</select>
+						        			</p>
+						        			<p>
+									            <label>ИНН:</label><br>
+									            <input type="text" name="inn" class="form-control" placeholder="Введите ИНН" value="{{customer.inn}}" maxlength="10"/>
+									        </p>
+									        <p>
+									            <label>КПП:</label><br>
+									            <input type="text" name="kpp" class="form-control" placeholder="Введите банк" value="{{customer.kpp}}" maxlength="9"/>
+									        </p>
+									        <p>
+									            <label>Банк:</label><br>
+									            <input type="text" name="bank" class="form-control" placeholder="Введите банк" value="{{customer.bank}}"  maxlength="50"/>
+									        </p>
+									        <p>
+									            <label>Р/с:</label><br>
+									            <input type="text" name="rs" class="form-control" placeholder="Введите р/с" value="{{customer.rs}}" maxlength="20"/>
+									        </p>
+									        <p>
+									            <label>Корр. счет:</label><br>
+									            <input type="text" name="ks" class="form-control" placeholder="Введите корр. счет" value="{{customer.ks}}" maxlength="20"/>
+									        </p>
+									        <p>
+									            <label>БИК:</label><br>
+									            <input type="text" name="bik" class="form-control" placeholder="Введите БИК" value="{{customer.bik}}" maxlength="9"/>
+									        </p>
+									        <p>
+									            <label> E-mail:</label><br>
+									            <input type="text" name="email" class="form-control" placeholder="Введите e-mail" value="{{customer.email}}" maxlength="40"/>
+									        </p>
+						        			
+									            
+					        				<input type="submit" class="btn btn-primary" value="Сохранить">
+					        
+					    		</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div> -->
+{% endblock %}

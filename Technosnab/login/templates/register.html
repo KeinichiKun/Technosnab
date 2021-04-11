@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Создание пользователя{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<form id="add_form" method="POST">
+	<div class="col-4">
+		 {% csrf_token %}
+        {{form}} 
+
+        <input form='add_form' type="submit" value="Сохранить" > 
+	</div>
+         				
+</form>
+
+{% endblock %}

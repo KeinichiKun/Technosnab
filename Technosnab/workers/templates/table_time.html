@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %}Табель отработанного времени на  {% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+	<container>
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">	
+					<h1>{{tab.worker}}</h1>
+					<h1>Табель отработанного времени на <input type="text" size="1" value='май'> <input type="text" size="1" value="2019"></h1>
+					<form method="POST">
+						{% csrf_token %}
+						<p><input type="submit" class="btn btn-primary" value="Сохранить" ></p>
+
+						
+						<table class="table-sm table-bordered">
+							<thead>
+								<tr>
+
+									<th>1</th>
+									<th>2</th>
+									<th>3</th>
+									<th>4</th>
+									<th>5</th>
+									<th>6</th>
+									<th>7</th>
+									<th>8</th>
+									<th>9</th>
+									<th>10</th>
+									<th>11</th>
+									<th>12</th>
+									<th>13</th>
+									<th>14</th>
+									<th>15</th>
+									<th>16</th>
+									<th>17</th>
+									<th>18</th>
+									<th>19</th>
+									<th>20</th>
+									<th>21</th>
+									<th>22</th>
+									<th>23</th>
+									<th>24</th>
+									<th>25</th>
+									<th>26</th>
+									<th>27</th>
+									<th>28</th>
+									<th>29</th>
+									<th>30</th>
+									<th>31</th>
+								
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" name="day1" size="1" value="{{tab.day1}}"></td>
+									<td><input type="text" name="day2" size="1" value="{{tab.day2}}"></td>
+									<td><input type="text" name="day3" size="1" value="{{tab.day3}}"></td>
+									<td><input type="text" name="day4" size="1" value="{{tab.day4}}"></td>
+									<td><input type="text" name="day5" size="1" value="{{tab.day5}}"></td>
+									<td><input type="text" name="day6" size="1" value="{{tab.day6}}"></td>
+									<td><input type="text" name="day7" size="1" value="{{tab.day7}}"></td>
+									<td><input type="text" name="day8" size="1" value="{{tab.day8}}"></td>
+									<td><input type="text" name="day9" size="1" value="{{tab.day9}}"></td>
+									<td><input type="text" name="day10" size="1" value="{{tab.day10}}"></td>
+									<td><input type="text" name="day11" size="1" value="{{tab.day11}}"></td>
+									<td><input type="text" name="day12" size="1" value="{{tab.day12}}"></td>
+									<td><input type="text" name="day13" size="1" value="{{tab.day13}}"></td>
+									<td><input type="text" name="day14" size="1" value="{{tab.day14}}"></td>
+									<td><input type="text" name="day15" size="1" value="{{tab.day15}}"></td>
+									<td><input type="text" name="day16" size="1" value="{{tab.day16}}"></td>
+									<td><input type="text" name="day17" size="1" value="{{tab.day17}}"></td>
+									<td><input type="text" name="day18" size="1" value="{{tab.day18}}"></td>
+									<td><input type="text" name="day19" size="1" value="{{tab.day19}}"></td>
+									<td><input type="text" name="day20" size="1" value="{{tab.day20}}"></td>
+									<td><input type="text" name="day21" size="1" value="{{tab.day21}}"></td>
+									<td><input type="text" name="day22" size="1" value="{{tab.day22}}"></td>
+									<td><input type="text" name="day23" size="1" value="{{tab.day23}}"></td>
+									<td><input type="text" name="day24" size="1" value="{{tab.day24}}"></td>
+									<td><input type="text" name="day25" size="1" value="{{tab.day25}}"></td>
+									<td><input type="text" name="day26" size="1" value="{{tab.day26}}"></td>
+									<td><input type="text" name="day27" size="1" value="{{tab.day27}}"></td>
+									<td><input type="text" name="day28" size="1" value="{{tab.day28}}"></td>
+									<td><input type="text" name="day29" size="1" value="{{tab.day29}}"></td>
+									<td><input type="text" name="day30" size="1" value="{{tab.day30}}"></td>
+									<td><input type="text" name="day31" size="1" value="{{tab.day31}}"></td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</container>
+{% endblock %}

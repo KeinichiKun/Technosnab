@@ -1,0 +1,36 @@
+
+/* Меню */
+.menu-bar {
+   background: #1565c0;
+   padding: 5px;
+   color: #ffffff;
+}
+
+.menu__item {
+   margin-left: 37px;
+}
+
+.menu__item a {
+   font-size: 20px;
+   color: #ffffff;
+}
+
+.menu__item a:hover {
+   text-decoration: none;
+   color: #dce4e6;
+}
+
+
+/* Второстепенное меню */
+.second-menu-bar {
+   background: #cdcdcd;
+   padding: 10px;
+   color: #ffffff;
+}
+
+
+.container {
+   padding-left: 0px;
+   padding-right: 0px;
+   width: 100%;
+}

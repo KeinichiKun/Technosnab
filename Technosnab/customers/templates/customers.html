@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}Заказчики{% endblock %}
+
+{% block filesLink %}
+	
+{% load static %}
+    
+
+ 
+{% endblock %}
+	
+{% block content %}
+
+	
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Заказчики:</h1>
+					<p><a href="create/" class="btn btn-primary">Добавить</a></p>
+					
+					<p>
+						<form method="get" class="form-inline">
+						    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Поиск..." aria-label="Search" required="">
+						    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+						</form>
+					</p>
+					<table class="table table-bordered">
+					  <thead>
+					    <tr>
+					      <th scope="col">ФИО</th>
+					      <th scope="col">Организация</th>
+					      <th scope="col">Адрес</th>
+					      <th scope="col">Телефон</th>
+					      <th scope="col">Тип заказчика</th>
+					      <th scope="col">ИНН</th>
+					      <th scope="col">КПП</th>
+					      <th scope="col">Банк</th>
+					      <th scope="col">Р/с</th>
+					      <th scope="col">Корр. счет</th>
+					      <th scope="col">БИК</th>
+					      <th scope="col">E-mail</th>
+					      <th scope="col"></th>
+					      
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	{% for customer in page_object.object_list %}
+					    	<tr>
+							      <td>{% if customer.first_name == None %}
+							      			-
+							      	  {% else %}
+							      	  	 	{{customer.first_name}} 
+							      	  {% endif %}
+							      	  {% if customer.middle_name == None %}
+							      			-
+							      	  {% else %}
+							      	  	 	{{customer.middle_name}}
+							      	  {% endif %}
+							      	  {% if customer.last_name == None %}
+							      			-
+							      	  {% else %}
+							      	  	 	{{customer.last_name}}
+							      	  {% endif %}
+							      	</td>
+							      <td>{% if customer.organization == None %} - {% else %} {{customer.organization}} {% endif %}</td>
+							      <td>{% if customer.adres == None %} - {% else %} {{customer.adres}} {% endif %}</td>
+							      <td>{% if customer.adres == None %} - {% else %} {{customer.phone}} {% endif %}</td>
+							      <td>{% if customer.T_customer == None %} - {% else %} {{customer.T_customer}} {% endif %}</td>
+							      <td>{% if customer.inn == None %} - {% else %} {{customer.inn}} {% endif %}</td>
+							      <td>{% if customer.kpp == None %} - {% else %} {{customer.kpp}} {% endif %}</td>
+							      <td>{% if customer.bank == None %} - {% else %} {{customer.bank}} {% endif %}</td>
+							      <td>{% if customer.rs == None %} - {% else %} {{customer.rs}} {% endif %}</td>
+							      <td>{% if customer.ks == None %} - {% else %} {{customer.ks}} {% endif %}</td>
+							      <td>{% if customer.bik == None %} - {% else %} {{customer.bik}} {% endif %}</td>
+							      <td>{% if customer.email == None %} - {% else %} {{customer.email}} {% endif %}</td>
+							      
+							      <td><a href="edit/{{customer.id}}">Изменить </a> | <a href="delete/{{customer.id}}">Удалить</a> | <a href="statistics/{{customer.id}}">Статистика</a></td>
+					   	 	</tr>
+					    {% endfor %}
+					  </tbody>
+					</table>
+					<nav aria-label="...">
+						  <ul class="pagination">
+
+							    <li class="page-item {%if not prev_page_url %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ prev_page_url }}" tabindex="-1" aria-disabled="true">Предыдущая</a>
+							    </li>
+
+							   
+								{% for n in page_object.paginator.page_range %}
+									{% if page_object.number == n %}
+										<li class="page-item active" aria-current="page">
+									    	<a class="page-link" href="?page={{ n }}">{{ n }} <span class="sr-only">(current)</span></a>
+									    </li>
+										{% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+									    <li class="page-item">
+									    	<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+									    </li>
+									{% endif %}
+								{% endfor %}
+
+							    <li class="page-item {%if not next_page_url %} disabled {% endif %}">
+							      	<a class="page-link" href="{{ next_page_url }} ">Следущая</a>
+							    </li>
+
+						  </ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+
+		
+{% endblock %}

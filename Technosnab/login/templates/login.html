@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+
+	<script src="https://kit.fontawesome.com/01a48ae3e3.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+
+
+	
+
+	
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+								
+					<li class="nav-item disabled"><a class="nav-link disabled" href="#" >Техноснаб</a></li>
+							
+				</ul>
+			</div>
+		</nav>
+	
+	</header>
+<!-- 	
+	<form id="add_form" method="POST">
+	<div class="col-4">
+		 {% csrf_token %}
+        {{form}} 
+
+        <input form='add_form' type="submit" value="Сохранить" > 
+	</div>
+         				
+</form> -->
+<!-- <form id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col-sm-8'>
+									    						<h1>Войти:</h1>
+																	{{form}}
+																	<input type="submit" class="btn btn-primary mt-4" value="Войти" >   
+			            					</div>
+						 	</div>
+	</div>
+
+			
+
+</form> -->
+<form id="add_form" method="POST">
+	{% csrf_token %}
+	<div class="container">
+						    <div class="row">
+									    	<div class='col-sm-8'>
+									    						<h1>Войти:</h1>
+									    							{% for field in form %}
+									    								<div class="form-group">
+
+									    									{% if field.errors %}
+									    										<div class="alert alert-danger" role="alert">
+									    											{{ field.errors }}
+									    										</div>
+									    									{% endif%}
+									    									
+									    									 {{ field.label }}
+									    									 {{ field }}
+									    								</div>
+									    							{% endfor %}
+																	
+																	<input type="submit" class="btn btn-primary mt-4" value="Войти" >   
+			            					</div>
+						 	</div>
+	</div>
+
+			
+
+</form>     
+	<footer class="bd-footer text-muted fixed-bottom justify">
+		<div class="container-fluid-center p-3 p-md-3">
+			<hr>
+			<p class="text-right">© Техноснаб 2020﻿-2020</p>
+		</div> 
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
