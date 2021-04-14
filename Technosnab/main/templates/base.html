@@ -7,23 +7,26 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 	<script src="https://kit.fontawesome.com/01a48ae3e3.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	
-	<link rel="stylesheet" href="{% static 'css/reset.css'%}">
-	<link rel="stylesheet" href="{% static 'css/BaseStyle.css'%}">
+
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'css/BaseStyle.css' %}">
+
+
 
 	{% block filesLink %}
 	{% endblock %}
 </head>
 
 <body>
- 	<header>
-		
-	</header>
-	
-	
-				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-				    <ul class="navbar-nav mr-auto">
+ <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Техноснаб</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+	   <ul class="navbar-nav mr-auto">
 				      {% url 'workers' as url_workers %}
 								{% url 'cars' as url_cars %}
 								{% url 'services' as url_services %}
@@ -32,7 +35,7 @@
 								{% url 'login' as url_login %}
 								{% url 'logout' as url_logout %}
 								{% url 'register' as url_register %}
-								<li class="nav-item disabled"><a class="nav-link disabled" href="#" >Техноснаб</a></li>
+								<!--<li class="nav-item disabled"><a class="nav-link disabled" href="#" >Техноснаб</a></li>-->
 								<li class="nav-item "><a class="nav-link {% if url_workers == request.path %}active{% endif %}" href="{{url_workers}}">Сотрудники</a></li>
 								<li class="nav-item "><a class="nav-link {% if url_cars == request.path %}active{% endif %} " href="{{url_cars}}">Автопарк</a></li>
 								<li class="nav-item "><a class="nav-link {% if url_services == request.path %}active{% endif %}" href="{{url_services}}">Товары</a></li>
@@ -41,17 +44,50 @@
 				    </ul>
 				    <form class="form-inline my-2 my-lg-0">
 						    <ul class="navbar-nav ">
-								{% if user.is_staff %}											
-								<!--<li class="nav-item "><a class="nav-link {% if url_register == request.path %}active{% endif %}" href="{{url_register}}">Создать пользователя</a></li> -->							
+								{% if user.is_staff %}
+								<!--<li class="nav-item "><a class="nav-link {% if url_register == request.path %}active{% endif %}" href="{{url_register}}">Создать пользователя</a></li> -->
 									<li class="nav-item "><a class="nav-link disabled" href="{{url_register}}">{{request.user}}</a></li>
 									<li class="nav-item "><a class="nav-link {% if url_logout == request.path %}active{% endif %}" href="{{url_logout}}">Выход</a></li>
 								{% else %}
 									<li class="nav-item "><a class="nav-link {% if url_login == request.path %}active{% endif %}" href="{{url_login}}">Авторизация</a></li>
 								{% endif %}
 							</ul>
-				    </form>
-				  </div>
-				</nav>
+    </form>
+  </div>
+</nav>
+
+	<!---->
+				<!--<nav class="navbar navbar-expand-sm navbar-dark bg-primary">-->
+				  <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+				    <!--<ul class="navbar-nav mr-auto">-->
+				      <!--{% url 'workers' as url_workers %}-->
+								<!--{% url 'cars' as url_cars %}-->
+								<!--{% url 'services' as url_services %}-->
+								<!--{% url 'orders' as url_orders %}-->
+								<!--{% url 'customers' as url_customers %}-->
+								<!--{% url 'login' as url_login %}-->
+								<!--{% url 'logout' as url_logout %}-->
+								<!--{% url 'register' as url_register %}-->
+								<!--&lt;!&ndash;<li class="nav-item disabled"><a class="nav-link disabled" href="#" >Техноснаб</a></li>&ndash;&gt;-->
+								<!--<li class="nav-item "><a class="nav-link {% if url_workers == request.path %}active{% endif %}" href="{{url_workers}}">Сотрудники</a></li>-->
+								<!--<li class="nav-item "><a class="nav-link {% if url_cars == request.path %}active{% endif %} " href="{{url_cars}}">Автопарк</a></li>-->
+								<!--<li class="nav-item "><a class="nav-link {% if url_services == request.path %}active{% endif %}" href="{{url_services}}">Товары</a></li>-->
+								<!--<li class="nav-item "><a class="nav-link {% if url_orders == request.path %}active{% endif %}" href="{{url_orders}}">Заказы</a></li>-->
+								<!--<li class="nav-item "><a class="nav-link {% if url_customers == request.path %}active{% endif %}" href="{{url_customers}}">Заказчики</a></li>-->
+				    <!--</ul>-->
+				    <!--<form class="form-inline my-2 my-lg-0">-->
+						    <!--<ul class="navbar-nav ">-->
+								<!--{% if user.is_staff %}											-->
+								<!--&lt;!&ndash;<li class="nav-item "><a class="nav-link {% if url_register == request.path %}active{% endif %}" href="{{url_register}}">Создать пользователя</a></li> &ndash;&gt;							-->
+									<!--<li class="nav-item "><a class="nav-link disabled" href="{{url_register}}">{{request.user}}</a></li>-->
+									<!--<li class="nav-item "><a class="nav-link {% if url_logout == request.path %}active{% endif %}" href="{{url_logout}}">Выход</a></li>-->
+								<!--{% else %}-->
+									<!--<li class="nav-item "><a class="nav-link {% if url_login == request.path %}active{% endif %}" href="{{url_login}}">Авторизация</a></li>-->
+								<!--{% endif %}-->
+							<!--</ul>-->
+				    <!--</form>-->
+				  <!--</div>-->
+				<!--</nav>-->
 
 	
 	<div class="container-fluid">

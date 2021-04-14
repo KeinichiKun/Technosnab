@@ -2,6 +2,7 @@ from django import forms
 from .models import Cars, Expenses
 from django.core.exceptions import ValidationError
 
+'''ФОРМА МАШИН'''
 class CarFormCreate(forms.ModelForm):
     class Meta:
         model = Cars
@@ -32,6 +33,10 @@ class CarFormEdit(forms.ModelForm):
              self.fields[field].widget.attrs['class'] = 'form-control'
 
 
+
+
+
+'''ФОРМА ЗАТРАТ'''
 class ExpensesFormCreate(forms.ModelForm):
     class Meta:
         model = Expenses
